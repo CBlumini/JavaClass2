@@ -61,6 +61,8 @@ class Battleship {
                 coordY = input.nextInt()-1;
 
 //this only partially works. If the number is in the array of fails, it's not smart enought to take into account location
+                //should create a method to populate a 5x2 array with all the ships
+                //then create another method to check calling each row of the 5x2 array and checking the two values agains the respective values that were just entered
                 if (reuseCheck(arrP1X, coordX) && reuseCheck(arrP1Y, coordY)){
                     System.out.println("You already have a ship there. Choose different coordinates.");
                     input.nextLine();
@@ -159,7 +161,7 @@ class Battleship {
         }
     }
 
-
+    //use this method to assign to the main boards
     private static void assignPlayer(char[][] shipsGrid, int[][] locations){
         //use location arrary to assign the targets to the ship grid array
         shipsGrid[locations[0][0]][locations[1][0]]='@';
@@ -169,7 +171,7 @@ class Battleship {
         shipsGrid[locations[0][4]][locations[1][4]]='@';
     }
 
-
+    //use this method to check if a spot was reused during entry
     private static boolean reuseCheck(int[] arr, int toCheckValue){
         // check if the specified element
         // is present in the array or not
@@ -184,9 +186,7 @@ class Battleship {
         return test;
     }
 
-    //create a method to store two numbers in the input aray (recieves 2d array, two numbers)
-
-    //create a method to check the numbers receives 2d array, 2 numbers
+    //create a method to see if shots were placed in the same place twice
 
 
 } //<<<<<<********************end of main class
